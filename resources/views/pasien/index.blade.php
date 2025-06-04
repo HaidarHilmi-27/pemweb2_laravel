@@ -14,21 +14,21 @@
     </thead>
     <tbody>
         @foreach ($pasiens as $pasien)
-            <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $pasien->kode }}</td>
-                <td>{{ $pasien->nama }}</td>
-                <td>{{ $pasien->tmp_lahir }}, {{ $pasien->tgl_lahir }}</td>
-                <td>{{ $pasien->gender }}</td>
-                <td>{{ $pasien->alamat }}</td>
-                <td>
-                    <a href="{{ url('pasien.edit', $pasien->id) }}" class="btn btn-warning">Edit</a>
-                    <form action="{{ url('pasien.destroy', $pasien->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $pasien->kode }}</td>
+            <td>{{ $pasien->nama }}</td>
+            <td>{{ $pasien->tmp_lahir }}, {{ $pasien->tgl_lahir }}</td>
+            <td>{{ $pasien->gender }}</td>
+            <td>{{ $pasien->alamat }}</td>
+            <td>
+                <a href="{{ url('pasien.edit', $pasien->id) }}" class="btn btn-warning">Edit</a>
+                <form action="{{ url('pasien.destroy', $pasien->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
         @endforeach
     </tbody>
